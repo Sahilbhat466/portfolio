@@ -23,4 +23,9 @@ urlpatterns = [
     path('', trends, name = 'trends'),
     path('trends/', trends, name = 'trends'),
     path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+    path('trends/<int:buy_id>', detail, name="detail"),
+    
+    ] 
+
+urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
