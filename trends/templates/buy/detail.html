@@ -168,37 +168,16 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Goku Akira</h1>
-        <p class="lead text-body-secondary">Hi!! My name is Goku Akira. I am anime character of 90's. People love me because I'm the best.</p>
+        <h1 class="fw-light">Buy Details</h1>
+        <p class="lead text-body-secondary">{{ buy.summary}}</p>
+        
+        <img src = "{{buy.image.url}}" height=300></img>
         <p>
-          <a href="mailto:gokuakira737@gmail.com" class="btn btn-primary my-2">Email Me</a>  
-        </p>
-        <img src = "{% static 'goku.jpg'%}" height=300></img>
+            <a href= "{% url 'trends' %}"class="btn btn-primary my-2">Back</a>  
+          </p>
       </div>
     </div>
   </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for buy in buys.all %}
-        <div class="col">
-          <a href="{% url 'detail' buy.id %}">
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" src="{{ buy.image.url }}">
-            <div class="card-body">
-              <p class="card-text">{{ buy.summary}}</p>
-            </div>
-          </div>
-          </a>
-          </div>
-          
-          {% endfor %}
-        </div>
-
-      </div>
-    </div>
-  </div>
 
 </main>
 
